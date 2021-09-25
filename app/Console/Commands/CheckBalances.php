@@ -64,7 +64,7 @@ class CheckBalances extends Command
         $hour_now  = now()->hour;
 
         if($hour_now > 6 && $hour_now < 23) {
-            Notification::route('slack', env('SLACK_WEBHOOK_URL'))->notify(new HourlyTrackingNotification());
+            Notification::route('slack', config("logging.channels.slack.url"))->notify(new HourlyTrackingNotification());
         }
 
         return 0;
