@@ -71,7 +71,7 @@ class Account extends Model
             $current_time = now();
         }
 
-        if ($current_time->hour < $hour_cutoff) {
+        if ($current_time->hour <= $hour_cutoff) {
             $today = Carbon::yesterday();
         } else {
             $today = Carbon::today();
@@ -91,7 +91,7 @@ class Account extends Model
             $current_time = now();
         }
 
-        if ($current_time->hour < $hour_cutoff) {
+        if ($current_time->hour <= $hour_cutoff) {
             echo "Getting latest bal from yesterday\n";
 
             $today = Carbon::yesterday();
